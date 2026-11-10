@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Joineazy – Frontend Intern Assignment (Task 2) Dossier</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+    @page {
+      size: A4;
+      margin: 14mm 14mm 14mm 14mm;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: #1e293b;
+      background: #ffffff;
+      line-height: 1.45;
+      font-size: 11.5px;
+    }
+
+    .page-break {
+      page-break-before: always;
+    }
+
+    .no-break {
+      page-break-inside: avoid;
+    }
+
+    /* Header styling */
+    .header-box {
+      border-bottom: 2px solid #4f46e5;
+      padding-bottom: 10px;
+      margin-bottom: 14px;
+    }
+
+    .main-title {
+      font-size: 20px;
+      font-weight: 800;
+      color: #312e81;
+      letter-spacing: -0.3px;
+    }
+
+    .sub-title {
+      font-size: 11.5px;
+      font-weight: 600;
+      color: #6366f1;
+      margin-top: 2px;
+    }
+
+    /* Info Table */
+    .info-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 16px;
+      border: 1px solid #cbd5e1;
+      font-size: 11px;
+    }
+
+    .info-table td {
+      padding: 6px 10px;
+      border: 1px solid #e2e8f0;
+      vertical-align: middle;
+    }
+
+    .info-label {
+      background: #f8fafc;
+      font-weight: 700;
+      color: #475569;
+      width: 18%;
+    }
+
+    .info-val {
+      color: #0f172a;
+      width: 32%;
+    }
+
+    .info-link {
+      color: #4f46e5;
+      font-weight: 600;
+      text-decoration: underline;
+      word-break: break-all;
+    }
+
+    .badge-pass {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      background: #dcfce7;
+      color: #15803d;
+      font-weight: 700;
+      font-size: 10.5px;
+    }
+
+    /* Section Headings */
+    .section-heading {
+      font-size: 13px;
+      font-weight: 800;
+      color: #0f172a;
+      margin-top: 14px;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    p {
+      color: #334155;
+      margin-bottom: 8px;
+      text-align: justify;
+      line-height: 1.5;
+    }
+
+    /* Data Tables */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 8px 0 14px 0;
+      font-size: 10.5px;
+      border: 1px solid #cbd5e1;
+    }
+
+    .data-table th {
+      background: #f1f5f9;
+      color: #1e293b;
+      font-weight: 700;
+      text-align: left;
+      padding: 6px 8px;
+      border: 1px solid #cbd5e1;
+      font-size: 10.5px;
+    }
+
+    .data-table td {
+      padding: 6px 8px;
+      border: 1px solid #e2e8f0;
+      color: #334155;
+      line-height: 1.4;
+    }
+
+    .data-table tr:nth-child(even) {
+      background: #f8fafc;
+    }
+
+    .code-pill {
+      font-family: monospace;
+      background: #f1f5f9;
+      padding: 1px 4px;
+      border-radius: 3px;
+      border: 1px solid #e2e8f0;
+      font-size: 10px;
+    }
+
+    .alert-box {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-radius: 6px;
+      padding: 8px 12px;
+      margin: 8px 0;
+      font-size: 10.5px;
+      color: #92400e;
+      line-height: 1.45;
+    }
+
+    .script-step {
+      margin-bottom: 8px;
+      padding-left: 12px;
+      border-left: 3px solid #6366f1;
+    }
+
+    .script-time {
+      font-weight: 700;
+      color: #4f46e5;
+      font-size: 10.5px;
+    }
+
+    .script-text {
+      font-style: italic;
+      color: #1e293b;
+      margin-top: 2px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ================= PAGE 1 ================= -->
+  <div class="header-box">
+    <div class="main-title">Joineazy – Frontend Intern Assignment (Task 2)</div>
+    <div class="sub-title">Student, Group & Assignment Management System – Candidate Submission Dossier</div>
+  </div>
+
+  <table class="info-table">
+    <tr>
+      <td class="info-label">Candidate Name:</td>
+      <td class="info-val"><strong>PagadamSetty Yasaswini</strong></td>
+      <td class="info-label">Role:</td>
+      <td class="info-val">Frontend Engineering Intern</td>
+    </tr>
+    <tr>
+      <td class="info-label">GitHub Repository:</td>
+      <td class="info-val"><a class="info-link" href="https://github.com/214G1A05C2/joineasytask2.git">github.com/214G1A05C2/joineasytask2.git</a></td>
+      <td class="info-label">Tech Stack:</td>
+      <td class="info-val">React 18, Vite, Tailwind CSS, LocalStorage, Recharts</td>
+    </tr>
+    <tr>
+      <td class="info-label">Live Website URL:</td>
+      <td class="info-val"><a class="info-link" href="https://frontend-v3yg.vercel.app">https://frontend-v3yg.vercel.app</a></td>
+      <td class="info-label">Submission Date:</td>
+      <td class="info-val">November 2026</td>
+    </tr>
+    <tr>
+      <td class="info-label">Demo Video Link:</td>
+      <td class="info-val"><span style="color:#64748b; font-style:italic;">[Ready for Candidate Recording / Loom / Drive link]</span></td>
+      <td class="info-label">Build Status:</td>
+      <td class="info-val"><span class="badge-pass">Passing (0 errors, 0 warnings)</span></td>
+    </tr>
+  </table>
+
+  <div class="section-heading">1. Executive Summary & Architecture</div>
+  <p>
+    This project delivers a complete, production-quality SaaS university productivity system called <strong>Joineazy</strong>. Built strictly adhering to the Round 2 internship evaluation specifications, it features comprehensive role-based access for <strong>PROFESSOR</strong> and <strong>STUDENT</strong>, persistent simulated JWT sessions via localStorage, dynamic completion statistics, reactive state synchronization, and exact permission gating for individual and collaborative group deliverables.
+  </p>
+
+  <div class="section-heading">2. Implemented Core Requirements</div>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th style="width: 25%;">Component / Area</th>
+        <th>Key Implemented Functionalities</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Authentication & Roles</strong></td>
+        <td>Mock sign-in/registration with email/password validation, simulated JWT session in localStorage, role-based route protection (Professor cannot access student routes and vice versa), and 1-Click Quick Demo Login Switcher.</td>
+      </tr>
+      <tr>
+        <td><strong>Professor Dashboard</strong></td>
+        <td>Real-time dynamic KPI metrics (Total Courses, Total Assignments, Enrolled Students, Submissions, Pending), interactive Recharts submission analytics, course overview cards with progress bars, and direct assignment navigation.</td>
+      </tr>
+      <tr>
+        <td><strong>Assignment CRUD (Professor)</strong></td>
+        <td>Complete Create, Read, Update, Delete assignment capabilities with confirmation modals. Validates required fields and OneDrive URLs. Search by title/description, filter by status (Active / Overdue), and sort by deadline or creation date.</td>
+      </tr>
+      <tr>
+        <td><strong>Submission Tracking Audit</strong></td>
+        <td>Deep audit view for assignments. <em>Individual Tasks:</em> lists every student, email, status, and acknowledgement timestamp. <em>Group Deliverables:</em> lists every group, group leader, roster, status, and submission timestamp.</td>
+      </tr>
+      <tr>
+        <td><strong>Student Dashboard</strong></td>
+        <td>Personalized greeting (<em>"Welcome back, Alex Rivera 👋"</em>), 6 KPI cards (Enrolled Courses, Total Tasks, Completed, Pending, Overdue, Completion %), and a Recharts submission status breakdown chart.</td>
+      </tr>
+      <tr>
+        <td><strong>Student Submission Workflow</strong></td>
+        <td><em>Individual Tasks:</em> "Yes, I have submitted" button with confirmation modal; saves timestamp; displays "Submitted on [Date & Time]"; prevents duplicate submissions. <em>Group Tasks:</em> Only the group leader can acknowledge submission; automatically syncs status for all team members. Non-leaders see "Acknowledged by [Leader Name] on [Date and Time]".</td>
+      </tr>
+      <tr>
+        <td><strong>Group Management System</strong></td>
+        <td>Dedicated group page per course. View current group, member avatars, and leader crown. Create new group (auto-assigns creator as leader). Join open groups with capacity limits (e.g. 4/4 Full). Safe Leave Group flow with leader reassignment.</td>
+      </tr>
+      <tr>
+        <td><strong>Design & UI/UX Polish</strong></td>
+        <td>Modern SaaS theme (Indigo #6366F1, Slate-50 background, Navy text), responsive mobile sidebar drawer, dynamic breadcrumbs, notification dropdown, loading skeletons, and React Hot Toast feedback for all user actions.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- ================= PAGE 2 ================= -->
+  <div class="page-break"></div>
+
+  <div class="section-heading">3. Pre-Seeded Evaluation Accounts (Passwords: Demo prefilled)</div>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th style="width: 14%;">Role</th>
+        <th style="width: 22%;">Name</th>
+        <th style="width: 30%;">Email Address</th>
+        <th style="width: 16%;">Password</th>
+        <th>Key Context & Seed State</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Professor</strong></td>
+        <td>Dr. Alistair Vance</td>
+        <td><code>professor@joineazy.com</code></td>
+        <td><code>Professor@123</code></td>
+        <td>Admin of 3 courses (CS201, CS301, CS401), created assignments, tracks live submissions.</td>
+      </tr>
+      <tr>
+        <td><strong>Student 1</strong></td>
+        <td>Alex Rivera (CS21B001)</td>
+        <td><code>student@joineazy.com</code></td>
+        <td><code>Student@123</code></td>
+        <td>Leader of <em>Alpha Devs</em> in CS401; Member in CS301; Unassigned in CS201 to test group creation.</td>
+      </tr>
+      <tr>
+        <td><strong>Student 2</strong></td>
+        <td>Sarah Chen (CS21B002)</td>
+        <td><code>sarah.chen@joineazy.com</code></td>
+        <td><code>Student@123</code></td>
+        <td>Leader of <em>SQL Wizards</em> in CS301; Team member in CS401 (demonstrates non-leader member view).</td>
+      </tr>
+      <tr>
+        <td><strong>Student 3</strong></td>
+        <td>Marcus Johnson (CS21B003)</td>
+        <td><code>marcus.johnson@joineazy.com</code></td>
+        <td><code>Student@123</code></td>
+        <td>Team member in <em>Alpha Devs</em> (demonstrates multi-student group synchronization).</td>
+      </tr>
+      <tr>
+        <td><strong>Student 4</strong></td>
+        <td>Priya Patel (CS21B004)</td>
+        <td><code>priya.patel@joineazy.com</code></td>
+        <td><code>Student@123</code></td>
+        <td>Leader of <em>ByteCrafters</em> in CS401.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="alert-box">
+    <strong>Exact Fallback Message Verification:</strong> When student Alex Rivera views a group assignment in CS201 without belonging to a group, the system displays the mandatory notice:
+    <div style="font-weight:700; color:#b45309; margin-top:3px;">
+      "You are not part of any group. Create or join one to submit this assignment."
+    </div>
+    with a direct action button: <strong>"Create or Join Group"</strong> routing directly to the group formation page.
+  </div>
+
+  <div class="section-heading">4. Demo Video Recording Guide & Project Presentation Script (3–5 Minutes)</div>
+  <p style="font-size:11px; margin-bottom:8px;">
+    Use the following script when recording your walkthrough video (using Loom, OBS, or Canva):
+  </p>
+
+  <div class="script-step">
+    <div class="script-time">[0:00 - 0:45] Introduction & Authentication Overview</div>
+    <div class="script-text">
+      "Hello everyone! My name is PagadamSetty Yasaswini, and today I am demonstrating <strong>Joineazy</strong>, a production-quality Student, Group & Assignment Management web application built for the Frontend Internship Round 2. The app is deployed live on Vercel and built with React 18, Vite, Tailwind CSS, and the Context API with persistent localStorage. Notice our login page includes 1-click quick demo fills for both Professor and Student personas."
+    </div>
+  </div>
+
+  <div class="script-step">
+    <div class="script-time">[0:45 - 2:00] Professor Dashboard & Assignment Management</div>
+    <div class="script-text">
+      "Let's sign in with the Professor account. On the dashboard, we see dynamically calculated KPI cards—Total Courses, Total Assignments, Enrolled Students, Submissions, and Pending counts. Our Recharts graph visually breaks down submission completion rates across courses. Navigating to 'Assignments', we can search, filter by status (Active / Overdue), and sort by deadline. Clicking 'Create Assignment' opens our validated modal where we can configure titles, deadlines, OneDrive URLs, and toggle between Individual and Group types. In 'Submission Tracking', we have a complete audit view displaying every student's submission status and exact acknowledgement timestamp."
+    </div>
+  </div>
+
+  <div class="script-step">
+    <div class="script-time">[2:00 - 3:30] Student Experience & Group Workflow</div>
+    <div class="script-text">
+      "Now, using our 1-click demo switcher in the top navigation bar, let's switch to our Student persona, Alex Rivera. In Alex's dashboard, we see personalized metrics and course progress. Moving to 'Course Assignments': For individual assignments, clicking 'Yes, I have submitted' prompts a confirmation dialog, captures the current timestamp, and updates the UI instantly to prevent duplicates. For CS201 Data Structures where Alex has no group, notice our required warning banner: <em>'You are not part of any group. Create or join one to submit this assignment.'</em> Clicking 'Create or Join Group' routes to the group hub where Alex can start a team and become its leader. Lastly, in CS401 where Alex is leader of Alpha Devs, Alex can submit on behalf of the entire team, instantly syncing the submission status for all group members!"
+    </div>
+  </div>
+
+  <div class="script-step">
+    <div class="script-time">[3:30 - 4:00] Wrap-up & Architecture Summary</div>
+    <div class="script-text">
+      "The application is fully responsive on mobile, tablet, and desktop, features dark-mode-ready UI cards, custom toast alerts, and complete session persistence on page refresh. The codebase is pushed to GitHub and deployed live on Vercel. Thank you for your time and review!"
+    </div>
+  </div>
+
+  <div style="text-align: center; margin-top: 18px; font-size: 10px; color: #94a3b8; border-top: 1px solid #e2e8f0; padding-top: 8px;">
+    Joineazy – Frontend Intern Assessment (Task 2) • Candidate: PagadamSetty Yasaswini • November 2026
+  </div>
+
+</body>
+</html>
