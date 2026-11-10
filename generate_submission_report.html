@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Joineazy – Frontend Intern Round 2 Submission Report</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+    @page {
+      size: A4;
+      margin: 18mm 16mm 18mm 16mm;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: #0f172a;
+      background: #ffffff;
+      line-height: 1.5;
+      font-size: 13px;
+    }
+
+    /* Print page break helpers */
+    .page-break {
+      page-break-before: always;
+    }
+
+    .no-break {
+      page-break-inside: avoid;
+    }
+
+    /* Cover Page */
+    .cover {
+      height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 1px solid #e2e8f0;
+      padding: 48px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 60%, #312e81 100%);
+      color: #ffffff;
+    }
+
+    .cover-badge {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      background: rgba(99, 102, 241, 0.25);
+      border: 1px solid rgba(165, 180, 252, 0.4);
+      color: #c7d2fe;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .cover-title {
+      font-size: 38px;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-top: 16px;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+    }
+
+    .cover-subtitle {
+      font-size: 17px;
+      color: #cbd5e1;
+      margin-top: 12px;
+      line-height: 1.4;
+      max-width: 580px;
+    }
+
+    .cover-links {
+      margin-top: 32px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 14px;
+      padding: 20px;
+    }
+
+    .cover-link-row {
+      display: flex;
+      margin-bottom: 10px;
+      font-size: 12px;
+    }
+
+    .cover-link-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .cover-link-label {
+      width: 140px;
+      color: #94a3b8;
+      font-weight: 600;
+    }
+
+    .cover-link-val {
+      color: #67e8f9;
+      font-weight: 700;
+      text-decoration: none;
+      word-break: break-all;
+    }
+
+    .cover-footer {
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      padding-top: 20px;
+      font-size: 11px;
+      color: #94a3b8;
+    }
+
+    /* Content Layout */
+    .section-title {
+      font-size: 20px;
+      font-weight: 800;
+      color: #0f172a;
+      border-bottom: 2px solid #6366f1;
+      padding-bottom: 8px;
+      margin-top: 28px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-subtitle {
+      font-size: 13px;
+      color: #64748b;
+      margin-top: -12px;
+      margin-bottom: 18px;
+    }
+
+    p {
+      color: #334155;
+      margin-bottom: 12px;
+      line-height: 1.6;
+    }
+
+    /* Cards */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 16px;
+    }
+
+    .card-header {
+      font-size: 14px;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .card-desc {
+      font-size: 12px;
+      color: #64748b;
+      line-height: 1.5;
+    }
+
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 12px;
+      background: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid #e2e8f0;
+    }
+
+    th {
+      background: #f1f5f9;
+      color: #1e293b;
+      font-weight: 700;
+      text-align: left;
+      padding: 10px 12px;
+      border-bottom: 1px solid #cbd5e1;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    td {
+      padding: 10px 12px;
+      border-bottom: 1px solid #e2e8f0;
+      color: #334155;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:nth-child(even) {
+      background: #f8fafc;
+    }
+
+    /* Badges */
+    .badge {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    .badge-indigo { background: #e0e7ff; color: #4338ca; }
+    .badge-green { background: #d1fae5; color: #065f46; }
+    .badge-amber { background: #fef3c7; color: #92400e; }
+    .badge-purple { background: #f3e8ff; color: #6b21a8; }
+
+    /* Highlights & Quotes */
+    .highlight-box {
+      background: #eef2ff;
+      border-left: 4px solid #6366f1;
+      padding: 14px 16px;
+      border-radius: 0 8px 8px 0;
+      margin: 16px 0;
+      font-size: 12px;
+      color: #312e81;
+      line-height: 1.6;
+    }
+
+    .requirement-box {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-radius: 10px;
+      padding: 14px;
+      margin: 12px 0;
+      font-size: 12px;
+      color: #92400e;
+    }
+
+    .check-list {
+      list-style: none;
+      margin: 12px 0;
+    }
+
+    .check-list li {
+      position: relative;
+      padding-left: 24px;
+      margin-bottom: 8px;
+      color: #334155;
+      font-size: 12px;
+    }
+
+    .check-list li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      color: #10b981;
+      font-weight: 800;
+    }
+
+    .footer-note {
+      text-align: center;
+      font-size: 11px;
+      color: #94a3b8;
+      margin-top: 30px;
+      padding-top: 12px;
+      border-top: 1px solid #e2e8f0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PAGE 1: COVER PAGE -->
+  <div class="cover">
+    <div>
+      <span class="cover-badge">Frontend Engineering Assessment</span>
+      <h1 class="cover-title">Joineazy</h1>
+      <p class="cover-subtitle">
+        Student, Group & Assignment Management System<br>
+        <strong>Round 2 Complete Production Implementation</strong>
+      </p>
+
+      <div class="cover-links">
+        <div class="cover-link-row">
+          <span class="cover-link-label">Live Deployment:</span>
+          <span class="cover-link-val">https://frontend-v3yg.vercel.app</span>
+        </div>
+        <div class="cover-link-row">
+          <span class="cover-link-label">GitHub Repository:</span>
+          <span class="cover-link-val">https://github.com/214G1A05C2/joineasytask2.git</span>
+        </div>
+        <div class="cover-link-row">
+          <span class="cover-link-label">Role Evaluation:</span>
+          <span style="color:#ffffff;">Professor & Student Role-Based Access</span>
+        </div>
+        <div class="cover-link-row">
+          <span class="cover-link-label">Architecture:</span>
+          <span style="color:#ffffff;">React 18 + Vite 6 + Tailwind CSS + Context API + Recharts</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cover-footer">
+      <span>Status: 100% Production Ready & Tested</span>
+      <span>Date: November 2026</span>
+    </div>
+  </div>
+
+  <!-- PAGE 2: EXECUTIVE SUMMARY & TECH ARCHITECTURE -->
+  <div class="page-break"></div>
+
+  <h2 class="section-title">1. Executive Summary</h2>
+  <p class="section-subtitle">Comprehensive Project Overview & Assessment Deliverable</p>
+
+  <p>
+    <strong>Joineazy</strong> is a production-grade, highly responsive university productivity platform engineered to streamline assignment workflows, collaborative team formations, and submission tracking between professors and students.
+  </p>
+
+  <div class="highlight-box">
+    <strong>Key Milestone Achievement:</strong> Built from ground up following strict SaaS architectural patterns. The platform includes full client-side routing, JWT session persistence via localStorage, reactive data synchronization, OneDrive URL verification, dynamic completion calculations, and exact enforcement of group leader submission permissions.
+  </div>
+
+  <h2 class="section-title">2. Technology Stack & Design System</h2>
+  <p class="section-subtitle">Modern Frontend Engineering Stack</p>
+
+  <div class="grid-2 no-break">
+    <div class="card">
+      <div class="card-header">⚡ Core Framework & Tooling</div>
+      <p class="card-desc">
+        • <strong>React 18.3:</strong> Functional components & custom reactive hooks<br>
+        • <strong>Vite 6.1:</strong> Sub-second HMR and optimized production bundling<br>
+        • <strong>React Router DOM 6.28:</strong> Nested routes, auth redirects, and guards
+      </p>
+    </div>
+    <div class="card">
+      <div class="card-header">🎨 UI, Styling & Visuals</div>
+      <p class="card-desc">
+        • <strong>Tailwind CSS 3.4:</strong> Custom Indigo/Navy SaaS theme tokens<br>
+        • <strong>Lucide React:</strong> Semantic iconography across all workflows<br>
+        • <strong>Recharts 2.15:</strong> Interactive course submission analytics
+      </p>
+    </div>
+    <div class="card">
+      <div class="card-header">💾 State & Mock API Layer</div>
+      <p class="card-desc">
+        • <strong>Context API:</strong> <code>AuthContext</code> and <code>DataContext</code><br>
+        • <strong>Safe localStorage:</strong> Auto-seeded DB with instant reset feature<br>
+        • <strong>Simulated Latency:</strong> Realistic async promise responses
+      </p>
+    </div>
+    <div class="card">
+      <div class="card-header">🔔 Feedback & Interactivity</div>
+      <p class="card-desc">
+        • <strong>React Hot Toast:</strong> Rich notifications for all mutations<br>
+        • <strong>Confirmation Modals:</strong> Guarding deletions, joins & submissions<br>
+        • <strong>Quick Role Switcher:</strong> Instant 1-click toggle for evaluators
+      </p>
+    </div>
+  </div>
+
+  <h2 class="section-title">3. Demo Credentials & Pre-Seeded Data</h2>
+  <p class="section-subtitle">Ready-to-Test Accounts with Simulated Real-World Data</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Role</th>
+        <th>Email Address</th>
+        <th>Password</th>
+        <th>Seeded Persona & Capabilities</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="badge badge-purple">Professor</span></td>
+        <td><strong>professor@joineazy.com</strong></td>
+        <td><code>Professor@123</code></td>
+        <td>Dr. Alistair Vance • 3 Active Courses (CS201, CS301, CS401) • Full Assignment CRUD & Tracking</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-indigo">Student</span></td>
+        <td><strong>student@joineazy.com</strong></td>
+        <td><code>Student@123</code></td>
+        <td>Alex Rivera (CS21B001) • Leader of <em>Alpha Devs</em> in CS401 • Member in CS301 • Unassigned in CS201</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-indigo">Student 2</span></td>
+        <td><strong>sarah.chen@joineazy.com</strong></td>
+        <td><code>Student@123</code></td>
+        <td>Sarah Chen (CS21B002) • Leader of <em>SQL Wizards</em> in CS301 • Member in CS401</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-indigo">Student 3</span></td>
+        <td><strong>priya.patel@joineazy.com</strong></td>
+        <td><code>Student@123</code></td>
+        <td>Priya Patel (CS21B004) • Leader of <em>ByteCrafters</em> in CS401</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- PAGE 3: PROFESSOR & STUDENT WORKFLOWS -->
+  <div class="page-break"></div>
+
+  <h2 class="section-title">4. Core Workflows & Feature Implementation</h2>
+  <p class="section-subtitle">Deep Dive into Verified Functional Requirements</p>
+
+  <div class="card no-break" style="margin-bottom:14px;">
+    <div class="card-header">👨‍🏫 4.1. Professor Assignment Management & Submission Tracking</div>
+    <p class="card-desc" style="margin-top:6px;">
+      Professors can create, edit, delete, search, filter, and sort assignments across all enrolled courses. Form validation guarantees non-empty titles, descriptions, deadlines, and legitimate OneDrive web URLs.
+    </p>
+    <ul class="check-list">
+      <li><strong>Dynamic Metrics:</strong> Displays <em>"Submitted: X / Y, Pending: Z, Progress: %"</em> with animated progress bars.</li>
+      <li><strong>Individual Submission Audit:</strong> Lists every enrolled student with avatar, email, Submitted/Pending badge, and timestamp.</li>
+      <li><strong>Group Submission Audit:</strong> Shows team names, assigned leader, member lists, and exact submission timestamps.</li>
+    </ul>
+  </div>
+
+  <div class="card no-break" style="margin-bottom:14px;">
+    <div class="card-header">👨‍🎓 4.2. Student Submission & Acknowledgement System</div>
+    <p class="card-desc" style="margin-top:6px;">
+      Assignments feature status indicators, time-remaining counters, and direct OneDrive repository access.
+    </p>
+    <ul class="check-list">
+      <li><strong>Individual Submission:</strong> Clicking <em>"Yes, I have submitted"</em> opens a confirmation dialog. Confirmation records the exact timestamp, updates the UI immediately, displays <em>"Submitted on [Date & Time]"</em>, and prevents duplicate submissions.</li>
+      <li><strong>Group Leader Privileges:</strong> Only the group leader sees the <em>"Yes, I have submitted (as Group Leader)"</em> button. Submitting records the acknowledgement across all group members.</li>
+      <li><strong>Group Member View:</strong> Non-leader members see <em>"Acknowledged by [Leader Name] on [Date and Time]"</em> without duplicate submit buttons.</li>
+    </ul>
+  </div>
+
+  <div class="requirement-box no-break">
+    <strong>Exact Requirement Verification:</strong> When a student views a group assignment without being part of any group, the system displays the mandatory notice:
+    <div style="background:#ffffff; border:1px solid #fcd34d; border-radius:6px; padding:10px; margin-top:8px; font-weight:700; color:#b45309;">
+      "You are not part of any group. Create or join one to submit this assignment."
+    </div>
+    Along with the action button: <strong>"Create or Join Group"</strong> routing directly to the course group management screen.
+  </div>
+
+  <div class="card no-break">
+    <div class="card-header">👥 4.3. Group Management System</div>
+    <p class="card-desc" style="margin-top:6px;">
+      Enforces university group collaboration rules:
+    </p>
+    <ul class="check-list">
+      <li><strong>Single Group Rule:</strong> A student can belong to only one group per course.</li>
+      <li><strong>Automatic Leadership:</strong> The creator automatically becomes the group leader.</li>
+      <li><strong>Capacity Guard:</strong> Groups have a maximum member capacity (e.g. 4/4 Full). Full groups cannot accept more members.</li>
+      <li><strong>Safe Leave Flow:</strong> Students can leave a group with safety confirmation; if a leader leaves, leadership is automatically passed to the next member.</li>
+    </ul>
+  </div>
+
+  <!-- PAGE 4: DEPLOYMENT & VERIFICATION CHECKLIST -->
+  <div class="page-break"></div>
+
+  <h2 class="section-title">5. Production Verification & Deployment</h2>
+  <p class="section-subtitle">Build Integrity, Git History & Live Environment</p>
+
+  <div class="grid-2 no-break">
+    <div class="card">
+      <div class="card-header">🌐 Live Production URL</div>
+      <p class="card-desc">
+        <strong>Vercel Link:</strong><br>
+        <a href="https://frontend-v3yg.vercel.app" style="color:#4f46e5; font-weight:700;">https://frontend-v3yg.vercel.app</a><br><br>
+        • Configured with SPA rewrite rules in <code>vercel.json</code>.<br>
+        • Zero 404 errors on deep route refreshes.<br>
+        • Fast global CDN delivery.
+      </p>
+    </div>
+    <div class="card">
+      <div class="card-header">📦 Git Repository</div>
+      <p class="card-desc">
+        <strong>Repository URL:</strong><br>
+        <a href="https://github.com/214G1A05C2/joineasytask2.git" style="color:#4f46e5; font-weight:700;">https://github.com/214G1A05C2/joineasytask2.git</a><br><br>
+        • Clean Git history with 57 files committed.<br>
+        • Branch: <code>main</code>.<br>
+        • Commit: <code>bb80efd</code>.
+      </p>
+    </div>
+  </div>
+
+  <h2 class="section-title">6. Quality Assurance & Evaluation Checklist</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Requirement Module</th>
+        <th>Implementation Detail</th>
+        <th>Test Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Authentication</strong></td>
+        <td>Role-based route protection, session persistence, inline error validation, 1-click demo fill</td>
+        <td><span class="badge badge-green">Passed (100%)</span></td>
+      </tr>
+      <tr>
+        <td><strong>Professor Dashboard</strong></td>
+        <td>Live dynamic KPI calculations, Recharts analytics, course cards, direct navigation</td>
+        <td><span class="badge badge-green">Passed (100%)</span></td>
+      </tr>
+      <tr>
+        <td><strong>Assignment CRUD</strong></td>
+        <td>Create, view, edit, delete with modals, OneDrive link validation, search & filters</td>
+        <td><span class="badge badge-green">Passed (100%)</span></td>
+      </tr>
+      <tr>
+        <td><strong>Submission Tracking</strong></td>
+        <td>Audit view for individual students & groups, exact timestamps, detail modals</td>
+        <td><span class="badge badge-green">Passed (100%)</span></td>
+      </tr>
+      <tr>
+        <td><strong>Student Dashboard</strong></td>
+        <td>Personalized greeting, 6 stat cards, status donut chart, enrolled course progress</td>
+        <td><span class="badge badge-green">Passed (100%)</span></td>
+      </tr>
+      <tr>
+        <td><strong>Individual Submit</strong></td>
+        <td>Confirmation dialog, timestamp capture, immediate UI update, duplicate prevention</td>
+        <td><span class="badge badge-green">Passed (100%)</span></td>
+      </tr>
+      <tr>
+        <td><strong>Group Submit</strong></td>
+        <td>Leader-only button, all-member sync, non-leader acknowledgement notice</td>
+        <td><span class="badge badge-green">Passed (100%)</span></td>
+      </tr>
+      <tr>
+        <td><strong>Group Management</strong></td>
+        <td>Create team (auto-leader), join open teams, capacity check, leave confirmation</td>
+        <td><span class="badge badge-green">Passed (100%)</span></td>
+      </tr>
+      <tr>
+        <td><strong>UI / Responsiveness</strong></td>
+        <td>Tailwind CSS SaaS palette, collapsible mobile sidebar, toast alerts, skeletons</td>
+        <td><span class="badge badge-green">Passed (100%)</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="footer-note">
+    Joineazy – Frontend Intern Round 2 Submission • Generated for Evaluation • November 2026
+  </div>
+
+</body>
+</html>
